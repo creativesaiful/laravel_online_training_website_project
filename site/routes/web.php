@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+Route::get('/', 'HomeController@HomeIndex');
+
+Route::post('/sendmessage', 'HomeController@contactMassageSend');
+
+
+//Menu link routing
+
+Route::get('/course', 'courseController@coursePage');
+Route::get('/project', 'projectController@projectPage');
+Route::get('/terms', 'termsController@termsPage');
+Route::get('/privacy', 'privacyController@privacyPage');
